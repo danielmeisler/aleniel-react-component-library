@@ -1,4 +1,5 @@
 import React, { MutableRefObject, useRef, useState } from 'react'
+import "./Accordion.css";
 
 interface AccordionProps {
   title: string
@@ -9,7 +10,7 @@ export const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
   const [showExtraContent, setShowExtraContent] = useState(false)
   const [height, setHeight] = useState('0px')
 
-  const contentSpace = useRef(null) as unknown as MutableRefObject<HTMLDivElement>
+  const contentSpace = useRef(null) as MutableRefObject<HTMLDivElement>
 
   function toggleAccordion() {
 		setShowExtraContent((previousState) => !previousState)

@@ -1,0 +1,17 @@
+.accordion-item {
+    background-color: blueviolet;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.accordion-title {
+    background-color: firebrick;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.accordion-content {
+    background-color: goldenrod;
+    color: indigo;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

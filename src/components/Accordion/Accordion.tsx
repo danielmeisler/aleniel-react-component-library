@@ -1,8 +1,8 @@
 import React, { MutableRefObject, useRef, useState } from 'react'
 
 interface AccordionProps {
-  title: React.ReactNode
-  content: React.ReactNode
+  title: string
+  content: string
 }
 
 export const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
@@ -22,11 +22,6 @@ export const Accordion: React.FC<AccordionProps> = ({ title, content }) => {
         onClick={toggleAccordion}
       >
         <p>{title}</p>
-        <img
-          src={'/assets/img/icons/chevron-up.svg'}
-          alt="Chevron icon"
-          className={`${showExtraContent ? 'rotate' : null} arrow`}
-        />
       </button>
       <div
         ref={contentSpace}

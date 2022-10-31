@@ -1,17 +1,19 @@
-.container {
-    display: flex;
-    flex-direction: column;
-  }
+.accordianContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: brown;
+}
   
-  .arrow {
-    transition: 0.3s;
-  }
+.accordionHeader {
+  background-color: aqua;
+  color: blue;
+  font-size: large;
+  cursor: pointer;
+}
   
-  .rotate {
-    transform: rotate(180deg);
-  }
-  
-  .extra-content {
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-  }
+.accordionBody {
+  background-color: crimson;
+  color: blanchedalmond;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}

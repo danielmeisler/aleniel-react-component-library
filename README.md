@@ -32,8 +32,7 @@ important: don't forget to update the version number in the package.json otherwi
 in `/lib`:\
 `npm run test`
 
-
-#### run tests with majestic test UI
+#### run tests with ui
 
 in `/lib`:\
-`npx majestic`
+`npm run test-ui`

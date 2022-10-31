@@ -37,6 +37,7 @@
   "types": "dist/index.d.ts",
   "dependencies": {
     "jest-environment-jsdom": "29.2.2",
+    "majestic": "^1.8.1",
     "tslib": "2.4.0"
   },
   "publishConfig": {

@@ -9,7 +9,6 @@ in `/`:\
 
 ### component development
 in `/lib`:\
-
 create and develop components in the lib folder. 
 
 #### create dist build

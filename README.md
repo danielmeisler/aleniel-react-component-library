@@ -29,9 +29,11 @@ important: don't forget to update the version number in the package.json otherwi
 
 #### run tests in console
 
+in `/lib`:\
 `npm run test`
 
 
 #### run tests with majestic test UI
 
+in `/lib`:\
 `npx majestic`

@@ -1,3 +1,3 @@
-export { default as Accordion } from "./Accordion";
-export { default as Button } from "./Button";
-export { default as Keyboard } from "./Keyboard";
+export { Accordion } from './Accordion';
+export { Button } from './Button';
+export { Keyboard } from './Keyboard';

@@ -1,12 +1,12 @@
-import React from "react";
-import "./Button.css";
+import styles from './Button.css';
+import React, { FunctionComponent } from 'react';
+
+const Button: FunctionComponent<ButtonProps> = ({ label }) => (
+  <button className={ `${styles.AlenielButton}` }>{ label }</button>
+);
 
 export interface ButtonProps {
   label: string;
 }
 
-const Button = (props: ButtonProps) => {
-  return <button className='AlenielButton'>{props.label}</button>;
-};
-
-export default Button;
+export { Button };

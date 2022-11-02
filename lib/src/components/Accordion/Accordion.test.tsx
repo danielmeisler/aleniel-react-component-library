@@ -7,11 +7,11 @@ import '@testing-library/jest-dom';
 
 describe('Accordion', () => {
   beforeEach(() => {
-    render(<Accordion 
-      title='accordion_title' 
-      content='accordion_content' 
-      isOpen={ false } 
-      />);
+    render(<Accordion
+      title='accordion_title'
+      content='accordion_content'
+      isOpen={ false }
+           />);
   });
 
   test('should display accordion title', () => {
@@ -24,6 +24,7 @@ describe('Accordion', () => {
 
   test('should open accordion', async () => {
     const accordion = screen.getByText(/accordion_title/iu);
+
     fireEvent.click(accordion);
     expect(await screen.findByText(/accordion_content/iu));
   });

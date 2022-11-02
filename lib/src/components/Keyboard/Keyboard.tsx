@@ -1,10 +1,8 @@
-import React from 'react';
-import "./Keyboard.css";
+import styles from './Keyboard.css';
+import React, { FunctionComponent } from 'react';
 
+const Keyboard: FunctionComponent = () => (
+  <div className={ `${styles.Keyboard}` } />
+);
 
-const Keyboard = () => {
-  return <div className='Keyboard'></div>;
-};
-
-
-export default Keyboard;
+export { Keyboard };

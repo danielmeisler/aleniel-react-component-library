@@ -1,4 +1,4 @@
-import styles from './Button.css';
+import styles from './Button.module.css';
 import React, { FunctionComponent } from 'react';
 
 const Button: FunctionComponent<ButtonProps> = ({ label }) => (

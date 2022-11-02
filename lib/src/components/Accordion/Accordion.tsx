@@ -1,4 +1,4 @@
-import styles from './Accordion.css';
+import styles from './Accordion.module.css';
 import React, { FunctionComponent, useState } from 'react';
 
 const Accordion: FunctionComponent<AccordionProps> = ({ title, content, isOpen }) => {

@@ -35,7 +35,6 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
-    "@types/js-cookie": "^3.0.2",
     "@ladle/react": "2.4.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",

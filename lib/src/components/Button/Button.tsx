@@ -7,7 +7,6 @@ const Button: FunctionComponent<ButtonProps> = ({ label }) => (
 
 export interface ButtonProps {
   label: string;
-  theme?: string;
 }
 
 export { Button };

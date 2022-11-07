@@ -1,20 +1,17 @@
 import React from 'react';
 import type { Story } from "@ladle/react";
-import { Accordion as Acc } from './../lib/src/components/';
+import { Accordion } from './../lib/src/components/';
 
-export const Default = () => <Acc isOpen={false} title="Titel" content='Test'></Acc>
-export const AccordionOpen = () => <Acc isOpen={true} title="Titel" content='Test'></Acc>
-
-
-export const AccordionWithControls: Story<{
+export const Default: Story<{
   isOpen: boolean;
   title: string;
   content: string;
-}> = ({ isOpen, title, content }) => <Acc isOpen={isOpen} title={title} content={content}></Acc>
+}> = ({ isOpen, title, content }) => <Accordion isOpen={isOpen} title={title} content={content}></Accordion>
 
-
-AccordionWithControls.args = {
+Default.args = {
   isOpen: false,
   title: "Titel",
   content: "Inhalt"
 };
+
+export const Opened = () => <Accordion isOpen={true} title="Titel" content='Test'></Accordion>

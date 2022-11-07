@@ -1,12 +1,10 @@
-:global(html[data-theme='light']) .AlenielButton,
-:global(.light) .AlenielButton {
+:global(html[data-theme='light']) .AlenielButton {
     font: 80px;
     background-color: white;
     color: black;
 }
 
-:global(html[data-theme='dark']) .AlenielButton,
-:global(.dark) .AlenielButton {
+:global(html[data-theme='dark']) .AlenielButton {
     font: 80px;
     background-color: rgb(31, 31, 31);
     color: white;

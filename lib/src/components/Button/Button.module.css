@@ -1,11 +1,13 @@
-.AlenielButtonDark {
-    font: 80px;
-    background-color: rgb(51, 51, 51);
-    color: white;
-}
-
-.AlenielButtonLight {
+:global(html[data-theme='light']) .AlenielButton,
+:global(.light) .AlenielButton {
     font: 80px;
     background-color: white;
     color: black;
+}
+
+:global(html[data-theme='dark']) .AlenielButton,
+:global(.dark) .AlenielButton {
+    font: 80px;
+    background-color: rgb(31, 31, 31);
+    color: white;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Story } from "@ladle/react";
-import { Button } from './../lib/src/components/';
+import { Button } from '..';
 
 export const Default: Story<{
   label: string;

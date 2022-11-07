@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Story } from "@ladle/react";
-import { Accordion } from './../lib/src/components/';
+import { Accordion } from '..';
 
 export const Default: Story<{
   isOpen: boolean;

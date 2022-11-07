@@ -3,6 +3,7 @@ import React from 'react';
 import { beforeEach, describe, expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
+// eslint-disable-next-line import/no-unassigned-import
 import '@testing-library/jest-dom';
 
 describe('Button', () => {

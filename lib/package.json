@@ -1,6 +1,6 @@
 {
   "name": "@danielmeisler/aleniel-react-component-library",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "A simple template for a custom React component library",
   "scripts": {
     "rollup": "rollup -c",
@@ -33,8 +33,10 @@
   ],
   "types": "dist/index.d.ts",
   "dependencies": {
+    "@types/js-cookie": "^3.0.2",
     "tslib": "2.4.0",
-    "vite": "3.2.2"
+    "vite": "3.2.2",
+    "js-cookie": "^3.0.1"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/danielmeisler"

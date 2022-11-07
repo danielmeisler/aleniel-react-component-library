@@ -1,3 +1,3 @@
-src/vite.config.ts
-src/rollup.config.js
+vite.config.ts
+rollup.config.js
 *.stories.tsx

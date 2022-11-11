@@ -1,0 +1,17 @@
+.linechart {
+  background: #1A1C1E;
+}
+
+.linechart polyline {
+  stroke-width: 2;
+  stroke: #35D5E4;
+}
+
+.linechart path {
+  fill:url(#gradient);
+}
+
+.label {
+  fill: #878B8F;
+  font-size: 12px;
+}

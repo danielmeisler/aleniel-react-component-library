@@ -41,7 +41,8 @@ export const LineChart: FunctionComponent<LineChartProps> = ({ width = 500, heig
         points={ newDatapoints.toString() }
       />
 
-      <line x1={ xOffset / 2 } y1={ height + (yOffset / 2) } x2='400' y2='30' stroke='green' />
+      <line x1={ xOffset / 2 } y1={ height + (yOffset / 2) } x2={ width - (xOffset / 2) } y2={ height + (yOffset / 2) } stroke='#232527' />
+      <line x1={ xOffset / 2 } y1={ height + (yOffset / 2) } x2={ xOffset / 2 } y2={ yOffset / 2 } stroke='#232527' />
 
       <g className={ styles.label }>
         <text x='0' y={ 0 + (yOffset / 2) }>100%</text>

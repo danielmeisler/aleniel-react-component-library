@@ -2,21 +2,45 @@ import React from 'react';
 import type { Story } from '@ladle/react';
 import { Link } from '..';
 
-export const Default: Story<{
+export const SmoothScrollToId: Story<{
   label: string;
-  smoothScrollToId?: string;
-  mailTo?: string;
-  tel?: string;
-  alertMessage?: string;
-  externalLink?: string;
-}> = ({ label, smoothScrollToId, mailTo, tel, alertMessage, externalLink }) => <Link label={label} mailTo={mailTo} tel={tel} smoothScrollToId={smoothScrollToId} alertMessage={alertMessage} externalLink={externalLink}/>
+  content: string;
+}> = ({ label, content}) => <Link label={label} smoothScrollToId={content}/>
 
-Default.args = {
-  label: 'Google',
-  smoothScrollToId: '',
-  mailTo: 'daniel_meisler@web.de',
-  tel: '',
-  alertMessage: '',
-  externalLink: 'https://www.google.com',
+SmoothScrollToId.args = {
+  label: 'ScrollToId',
+  content: 'testId'
 };
 
+
+export const MailTo: Story<{
+  label: string;
+  content: string;
+}> = ({ label, content}) => <Link label={label} mailTo={content}/>
+
+MailTo.args = {
+  label: 'Mail me!',
+  content: 'test@gmail.com'
+};
+
+
+export const TelTo: Story<{
+  label: string;
+  content: string;
+}> = ({ label, content}) => <Link label={label} tel={content}/>
+
+TelTo.args = {
+  label: 'Call me!',
+  content: '0123456789'
+};
+
+
+export const ExternalLink: Story<{
+  label: string;
+  content: string;
+}> = ({ label, content}) => <Link label={label} externalLink={content}/>
+
+ExternalLink.args = {
+  label: 'Google',
+  content: 'https://www.google.com'
+};

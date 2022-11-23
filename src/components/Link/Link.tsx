@@ -1,3 +1,4 @@
+import { Link as RouterLink } from 'react-router-dom';
 import styles from './Link.module.css';
 import React, { FunctionComponent } from 'react';
 
@@ -57,7 +58,7 @@ const Link: FunctionComponent<LinkProps> = ({ label, ...props }) => {
 
   if ('internalLink' in props && !(props.internalLink === '')) {
     href = `/${props.internalLink}`;
-    LinkComponent = <a className={ `${styles.Link}` } href={ href }> &#10151; { label ?? props.internalLink } </a>;
+    LinkComponent = <RouterLink className={ `${styles.Link}` } to={ props.internalLink }> &#10151; { label ?? props.internalLink } </RouterLink>;
   }
 
   if ('externalLink' in props && !(props.externalLink === '')) {

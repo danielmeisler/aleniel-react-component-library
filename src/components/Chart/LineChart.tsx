@@ -44,11 +44,11 @@ export const LineChart: FunctionComponent<LineChartProps> = ({ width = 500, heig
       <line x1={ xOffset / 2 } y1={ height + (yOffset / 2) } x2={ width - (xOffset / 2) } y2={ height + (yOffset / 2) } stroke='#232527' />
       <line x1={ xOffset / 2 } y1={ height + (yOffset / 2) } x2={ xOffset / 2 } y2={ yOffset / 2 } stroke='#232527' />
 
-      <g className={ styles.label }>
-        <text x='0' y={ 0 + (yOffset / 2) }>100%</text>
-        <text x='0' y={ (height / 2) + (yOffset / 2) }>50%</text>
-        <text x='0' y={ height + (yOffset / 2) }>0%</text>
-      </g>
+      <text className={ styles.label } textAnchor='end'>
+        <tspan x='25' y={ 3 + (yOffset / 2) }>100%</tspan>
+        <tspan x='25' y={ 3 + (height / 2) + (yOffset / 2) }>50%</tspan>
+        <tspan x='25' y={ 3 + height + (yOffset / 2) }>0%</tspan>
+      </text>
       <g className={ styles.label }>
         <text x={ width - (xOffset / 2) } y={ height + (yOffset / 2) + 14 }>Now</text>
       </g>

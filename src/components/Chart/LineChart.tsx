@@ -35,7 +35,10 @@ export const LineChart: FunctionComponent<LineChartProps> = ({ width = 500, heig
           <stop offset='100%' stopColor='#35d5e41a' />
         </linearGradient>
         <mask id='chart-mask'>
-          <rect x={ xOffset / 2 } y={ yOffset / 2 } width={ width - xOffset } height={ height + (yOffset / 2) } fill='white' />
+          <rect x={ xOffset / 2 } y={ yOffset / 2 } width={ width - xOffset } height={ height } fill='white' />
+        </mask>
+        <mask id='xAxisLabelMask'>
+          <rect x={ xOffset / 2 } y={ height + (yOffset / 2) } width={ width } height={ height } fill='white' />
         </mask>
       </defs>
       <polyline
@@ -55,7 +58,7 @@ export const LineChart: FunctionComponent<LineChartProps> = ({ width = 500, heig
         <tspan x='25' y={ 3 + (height / 2) + (yOffset / 2) }>50%</tspan>
         <tspan x='25' y={ 3 + height + (yOffset / 2) }>0%</tspan>
       </text>
-      <text className={ styles.label } textAnchor='middle' mask='url(#chart-mask)'>
+      <text className={ styles.label } textAnchor='middle' mask='url(#xAxisLabelMask)'>
         {
           dataset.map((datapoint, index) =>
             index % 2 === 0 &&

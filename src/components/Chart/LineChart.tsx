@@ -1,90 +1,41 @@
 import styles from './LineChart.module.css';
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect } from 'react';
 
 interface LineChartProps {
   width?: number;
   height?: number;
   spacing?: number;
+  dataset: Dataset[];
 }
 
-export const LineChart: FunctionComponent<LineChartProps> = ({ width = 500, height = 100, spacing = 20 }) => {
-  const dataset = [
-    {
-      data: 50,
-      label: 'now'
-    },
-    {
-      data: 4,
-      label: '12:00'
-    },
-    {
-      data: 100,
-      label: '13:00'
-    },
-    {
-      data: 20,
-      label: '14:00'
-    },
-    {
-      data: 25,
-      label: '15:00'
-    },
-    {
-      data: 5,
-      label: '16:00'
-    },
-    {
-      data: 90,
-      label: '17:00'
-    },
-    {
-      data: 20,
-      label: '18:00'
-    },
-    {
-      data: 60,
-      label: '19:00'
-    },
-    {
-      data: 24,
-      label: '20:00'
-    },
-    {
-      data: 80,
-      label: '21:00'
-    }
-  ];
-
-  const datapoints: number[] = [];
+export const LineChart: FunctionComponent<LineChartProps> = ({ width = 500, height = 300, spacing = 20, dataset }) => {
   const yOffset = 40;
   const xOffset = 60;
-  let path = `M${500 - (xOffset / 2)} ${100 + (yOffset / 2)} `;
+  const datapoints: number[] = [];
 
-  // eslint-disable-next-line unicorn/no-for-loop
-  for (let i = 0; i < dataset.length; i++) {
-    datapoints.push(width - (i * spacing) - (xOffset / 2));
-    datapoints.push(height - dataset[i].data + (yOffset / 2));
-    path += `L${width - (i * spacing) - (xOffset / 2)} `;
-    path += `${height - dataset[i].data + (yOffset / 2)} `;
-  }
+  let path = `M${width - (xOffset / 2)} ${height + (yOffset / 2)} `;
+
+  dataset.forEach((datapoint, index) => {
+    const datapointWidth = width - (index * spacing) - (xOffset / 2);
+    const datapointHeight = height - (dataset[index].data * height / 100) + (yOffset / 2);
+
+    datapoints.push(datapointWidth);
+    datapoints.push(datapointHeight);
+    path += `L${datapointWidth} `;
+    path += `${datapointHeight} `;
+  });
 
   path += `${width - (xOffset / 2) - ((dataset.length - 1) * spacing)} ${height + (yOffset / 2)} Z`;
 
   return (
     <svg viewBox={ `0 0 ${width} ${height + yOffset}` } className={ styles.linechart }>
-      <defs>
-        <linearGradient id='gradient' gradientTransform='rotate(90)'>
-          <stop stopColor='#35d5e445' />
-          <stop offset='100%' stopColor='#35d5e41a' />
-        </linearGradient>
-      </defs>
-      <path d={ path } />
       <polyline
         fill='none'
         stroke='#35D5E4'
         strokeWidth='3'
         points={ datapoints.toString() }
       />
+      <path d={ path } />
 
       <line x1={ xOffset / 2 } y1={ height + (yOffset / 2) } x2={ width - (xOffset / 2) } y2={ height + (yOffset / 2) } stroke='#232527' />
       <line x1={ xOffset / 2 } y1={ height + (yOffset / 2) } x2={ xOffset / 2 } y2={ yOffset / 2 } stroke='#232527' />
@@ -98,9 +49,20 @@ export const LineChart: FunctionComponent<LineChartProps> = ({ width = 500, heig
         {
           dataset.map((datapoint, index) =>
             index % 2 === 0 &&
-            <tspan key={ datapoint.label.toString() } x={ (width - (yOffset / 2) - (spacing / 2)) - (index * spacing) } y={ height + (yOffset / 2) + 14 }>{ datapoint.label }</tspan>)
+            <tspan key={ datapoint.xAxisLabel.toString() } x={ (width - (yOffset / 2) - (spacing / 2)) - (index * spacing) } y={ height + (yOffset / 2) + 14 }>{ datapoint.xAxisLabel }</tspan>)
         }
       </text>
+      <defs>
+        <linearGradient id='gradient' gradientTransform='rotate(90)'>
+          <stop stopColor='#35d5e445' />
+          <stop offset='100%' stopColor='#35d5e41a' />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };
+
+export interface Dataset {
+  data: number;
+  xAxisLabel: string;
+}

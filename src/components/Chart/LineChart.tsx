@@ -58,7 +58,7 @@ export const LineChart: FunctionComponent<LineChartProps> = ({ width = 500, heig
         <tspan x='25' y={ 3 + (height / 2) + (yOffset / 2) }>50%</tspan>
         <tspan x='25' y={ 3 + height + (yOffset / 2) }>0%</tspan>
       </text>
-      <text className={ styles.label } textAnchor='middle' mask='url(#xAxisLabelMask)'>
+      <text className={ styles.label } textAnchor='start' mask='url(#xAxisLabelMask)'>
         {
           dataset.map((datapoint, index) =>
             index % 2 === 0 &&

@@ -29,13 +29,24 @@ export const LineChart: FunctionComponent<LineChartProps> = ({ width = 500, heig
 
   return (
     <svg viewBox={ `0 0 ${width} ${height + yOffset}` } className={ styles.linechart }>
+      <defs>
+        <linearGradient id='gradient' gradientTransform='rotate(90)'>
+          <stop stopColor='#35d5e445' />
+          <stop offset='100%' stopColor='#35d5e41a' />
+        </linearGradient>
+        <mask id='mask'>
+          <rect x={ xOffset / 2 } y={ yOffset / 2 } width={ width - xOffset } height={ height } fill='white' />
+        </mask>
+      </defs>
+
       <polyline
         fill='none'
         stroke='#35D5E4'
         strokeWidth='3'
+        mask='url(#mask)'
         points={ datapoints.toString() }
       />
-      <path d={ path } />
+      <path d={ path } mask='url(#mask)' />
 
       <line x1={ xOffset / 2 } y1={ height + (yOffset / 2) } x2={ width - (xOffset / 2) } y2={ height + (yOffset / 2) } stroke='#232527' />
       <line x1={ xOffset / 2 } y1={ height + (yOffset / 2) } x2={ xOffset / 2 } y2={ yOffset / 2 } stroke='#232527' />
@@ -52,12 +63,6 @@ export const LineChart: FunctionComponent<LineChartProps> = ({ width = 500, heig
             <tspan key={ datapoint.xAxisLabel.toString() } x={ (width - (yOffset / 2) - (spacing / 2)) - (index * spacing) } y={ height + (yOffset / 2) + 14 }>{ datapoint.xAxisLabel }</tspan>)
         }
       </text>
-      <defs>
-        <linearGradient id='gradient' gradientTransform='rotate(90)'>
-          <stop stopColor='#35d5e445' />
-          <stop offset='100%' stopColor='#35d5e41a' />
-        </linearGradient>
-      </defs>
     </svg>
   );
 };

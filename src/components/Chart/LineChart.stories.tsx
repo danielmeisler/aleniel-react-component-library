@@ -20,43 +20,43 @@ Default.args = {
     },
     {
       data: 4,
-      xAxisLabel: '12:00'
+      xAxisLabel: '21:00'
     },
     {
       data: 100,
-      xAxisLabel: '13:00'
-    },
-    {
-      data: 20,
-      xAxisLabel: '14:00'
-    },
-    {
-      data: 25,
-      xAxisLabel: '15:00'
-    },
-    {
-      data: 5,
-      xAxisLabel: '16:00'
-    },
-    {
-      data: 90,
-      xAxisLabel: '17:00'
-    },
-    {
-      data: 20,
-      xAxisLabel: '18:00'
-    },
-    {
-      data: 60,
-      xAxisLabel: '19:00'
-    },
-    {
-      data: 24,
       xAxisLabel: '20:00'
     },
     {
+      data: 20,
+      xAxisLabel: '19:00'
+    },
+    {
+      data: 25,
+      xAxisLabel: '18:00'
+    },
+    {
+      data: 5,
+      xAxisLabel: '17:00'
+    },
+    {
+      data: 90,
+      xAxisLabel: '16:00'
+    },
+    {
+      data: 20,
+      xAxisLabel: '15:00'
+    },
+    {
+      data: 60,
+      xAxisLabel: '14:00'
+    },
+    {
+      data: 24,
+      xAxisLabel: '13:00'
+    },
+    {
       data: 80,
-      xAxisLabel: '21:00'
+      xAxisLabel: '12:00'
     }
   ]
 };
